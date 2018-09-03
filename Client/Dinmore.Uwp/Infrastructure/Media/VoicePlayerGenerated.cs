@@ -17,7 +17,7 @@ namespace Dinmore.Uwp.Infrastructure.Media
         private bool disposedValue = false; 
         private static MediaPlayer mediaPlayer = new MediaPlayer();
         private MediaPlaybackList playbackList = new MediaPlaybackList();
-        private bool StopOnNextTrack;
+        //private bool StopOnNextTrack;
 
         public VoicePlayerGenerated() {
             mediaPlayer.MediaEnded += MediaPlayer_MediaEnded; ;

@@ -51,9 +51,9 @@ namespace Dinmore.Uwp.Infrastructure
 
                 return packageFileName;
             }
-            catch (Exception ex)
+            catch
             {
-                //Log here when it is a glbal function
+                //Log here when it is a global function
                 return null;
             }
         }

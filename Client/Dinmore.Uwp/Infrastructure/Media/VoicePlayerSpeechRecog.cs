@@ -14,7 +14,7 @@ namespace Dinmore.Uwp.Infrastructure.Media
     {
         private bool disposedValue = false; 
         private static MediaPlayer mediaPlayer = new MediaPlayer();
-        private bool StopOnNextTrack;
+        //private bool StopOnNextTrack;
         private SemaphoreSlim semaphoreSlim = new SemaphoreSlim(0, 1);
         public bool IsCurrentlyPlaying { get; set; }
 

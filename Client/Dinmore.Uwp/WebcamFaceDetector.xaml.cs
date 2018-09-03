@@ -190,7 +190,8 @@ namespace Dinmore.Uwp
             var deviceId = Settings.GetString(DeviceSettingKeys.DeviceIdKey);
             if (deviceId == null)
             {
-                LogStatusMessage($"No Device ID. Cannot get device settings.", StatusSeverity.Error, false);
+                LogStatusMessage($"No Device ID. Cannot get device settings. Changing to Onboarding state.", StatusSeverity.Error, true);
+                ChangeDetectionState(DetectionStates.OnBoarding);
                 return false;
             }
 
@@ -199,7 +200,7 @@ namespace Dinmore.Uwp
 
             if (device == null)
             {
-                LogStatusMessage($"Could not find this device in the device data store. Suggest this device is reset and re-onboarded.", StatusSeverity.Error, false);
+                LogStatusMessage($"Could not find this device in the device data store. Suggest this device is reset and re-onboarded.", StatusSeverity.Error, true);
                 return false;
             }
 
@@ -348,7 +349,7 @@ namespace Dinmore.Uwp
                 successful = false;
 
             }
-            catch (Exception ex)
+            catch
             {
                 LogStatusMessage("There is no webcam present, please add a USB webcam and restart the exhibit", StatusSeverity.Info, true);
                 successful = false;
